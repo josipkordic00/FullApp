@@ -7,10 +7,12 @@ const savjetnikTerminiController = (req,res)=>{
 
 
     db.termini.find({savjetnik : name},(err,termini)=>{
-        console.log(termini);
+        
         res.render("admin/savjetnikTermini",{
             name: name,
-            termini:termini
+            username: user.first_name,
+            termini:termini,
+            role: user.role
         })
     })
 }

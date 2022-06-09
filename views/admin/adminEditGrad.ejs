@@ -14,7 +14,7 @@
       content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
     />
     <meta name="robots" content="noindex,nofollow" />
-    <title><%= username %> - <%= role %></title>
+    <title>Admin</title>
     <base href="/">
     <!-- Favicon icon -->
     <link
@@ -153,7 +153,7 @@
               <!-- ============================================================== -->
               <!-- Search -->
               <!-- ============================================================== -->
-              
+             
             </ul>
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
@@ -161,13 +161,6 @@
             <ul class="navbar-nav float-end">
               <!-- ============================================================== -->
               <!-- Comment -->
-              <!-- ============================================================== -->
-              
-              <!-- ============================================================== -->
-              <!-- End Comment -->
-              <!-- ============================================================== -->
-              <!-- ============================================================== -->
-              <!-- Messages -->
               <!-- ============================================================== -->
               
               <!-- ============================================================== -->
@@ -258,11 +251,8 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Tablica Termina</h4>
+              <h4 class="page-title">Kreiraj novi grad</h4>
               
-              <div class="ms-auto text-end">
-                
-              </div>
             </div>
           </div>
         </div>
@@ -272,83 +262,58 @@
         <!-- ============================================================== -->
         <!-- Container fluid  -->
         <!-- ============================================================== -->
-        <div class="container-fluid">
-          <!-- ============================================================== -->
-          <!-- Start Page Content -->
-          <!-- ============================================================== -->
-          <div class="row">
-            <div class="col-12">
-              
-              <div class="card">
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table
-                      id="zero_config"
-                      class="table table-striped table-bordered"
-                    >
-                      <thead>
-                        <tr>
-                          <th>Stranka</th>
-                          <th>Datum/vrijeme</th>
-                          <th>Status</th>
-                          <th>Operacija</th>
-                          <th>Terapija</th>
-                          <th>Napomena</th>
-                          <th>Grad</th>
-                          
-                        </tr>
-                      </thead>
-                     <tbody>
-                         <% for(let i = 0; i<termini.length;i++) {%>
-                            <tr>
-                                <td><%= termini[i].ime_stranke + " "+ termini[i].prezime_stranke %></td>
-                                <td><%= termini[i].datum_zakazivanja + " "+ termini[i].vrijeme_zakazivanja %></td>
-                                <td><%if(termini[i].active) {%>
-                                        <button class="btn btn-success">Aktivan</button>
-                                    <% }else{ %>
-                                        <button class="btn btn-danger">Zavrsen</button>
-                                    <% } %>
-                                </td>
-                                <td><%= termini[i].operacije %></td>
-                            <td><%= termini[i].terapija %>
-                        </td>
-                            <td><%= termini[i].napomena %></td>
-                            <td><%= termini[i].grad %></td>
-                            
-                            </tr>
-                            <% } %>
-                     </tbody>
-                      
-                    </table>
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-6 offset-3">
+          <div class="card">
+            <form class="form-horizontal" action="/admin/update/grad/<%= id %>" method="POST">
+              <div class="card-body">
+                <h4 class="card-title">Novi Grad</h4>
+                <div class="form-group row">
+                  <label
+                    for="fname"
+                    class="col-sm-3 text-end control-label col-form-label"
+                    >Ime grada</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      value="<%= name %>"
+                      placeholder="Ime grada"
+                    />
                   </div>
                 </div>
+                <div class="form-group row">
+                  <label
+                    for="lname"
+                    class="col-sm-3 text-end control-label col-form-label"
+                    >Postanski broj</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="zip"
+                      name="zip"
+                      value="<%= zip %>"
+                      placeholder="Postanski broj"
+                    />
+                  </div>
+                </div>
+                
+                  <button type="submit" class="btn btn-primary">
+                    Edit
+                  </button>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
-          <!-- ============================================================== -->
-          <!-- End PAge Content -->
-          <!-- ============================================================== -->
-          <!-- ============================================================== -->
-          <!-- Right sidebar -->
-          <!-- ============================================================== -->
-          <!-- .right-sidebar -->
-          <!-- ============================================================== -->
-          <!-- End Right sidebar -->
-          <!-- ============================================================== -->
+         </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- End Container fluid  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <footer class="footer text-center">
-         
-        </footer>
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
-      </div>
+     </div>
       <!-- ============================================================== -->
       <!-- End Page wrapper  -->
       <!-- ============================================================== -->
@@ -359,28 +324,6 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
-    <!--Wave Effects -->
-    <script src="../dist/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="../dist/js/custom.min.js"></script>
-    <!-- this page js -->
-    <script src="../assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
-    <script src="../assets/extra-libs/multicheck/jquery.multicheck.js"></script>
-    <script src="../assets/extra-libs/DataTables/datatables.min.js"></script>
-    <script>
-      /****************************************
-       *       Basic Table                   *
-       ****************************************/
-      $("#zero_config").DataTable();
-    </script>
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

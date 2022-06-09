@@ -7,6 +7,10 @@ router.get('/',require("../controllers/admin/adminController"))
 router.get("/create",(req,res)=>{
     res.render("admin/adminCreateForm");
 })
+router.get("/edit/:id", require("../controllers/admin/adminEditFormController"));
+router.get("/edit/grad/:id", require("../controllers/admin/adminEditGradController"));
+router.get("/edit/proizvod/:id", require("../controllers/admin/adminEditProizvodController"));
+
 router.get("/create_grad",(req,res)=>{
     res.render("admin/createGrad");
 })
@@ -23,6 +27,9 @@ router.get("/delete/proizvod/:proizvodId", require("../controllers/admin/deleteP
 router.post("/create/save",require("../controllers/admin/saveController"));
 router.post("/create/grad/save",require("../controllers/admin/saveGradController"));
 router.post("/create/proizvod/save",require("../controllers/admin/saveProizvodController"));
+router.post("/update/:id",require("../controllers/admin/updateController"));
+router.post("/update/grad/:id",require("../controllers/admin/updateGradController"));
+router.post("/update/proizvod/:id",require("../controllers/admin/updateProizvodController"));
 
 
 

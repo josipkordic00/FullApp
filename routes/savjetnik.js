@@ -5,7 +5,6 @@ router.use(checkSavjetnik)
 
 router.get("/:id", require("../controllers/savjetnik/showTerminController"))
 router.get("/",require("../controllers/savjetnik/savjetnikController"))
-router.get("/:name",require("../controllers/savjetnik/zavrseniTerminiController"))
 
 
 router.post("/izvjestaj/:id", require("../controllers/savjetnik/izvjestajController"))

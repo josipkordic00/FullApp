@@ -8,7 +8,8 @@ const showTerminController = (req,res)=>{
     db.termini.find({_id:mongojs.ObjectID(id)},(err,termin)=>{
         res.render("savjetnik/showTermin", {
             name : user.first_name,
-            termin: termin[0]
+            termin: termin[0],
+            role: user.role
         })
     })
 }

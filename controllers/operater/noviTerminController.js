@@ -26,7 +26,8 @@ const noviTerminController = (req,res)=>{
         rezlog : "",
         ulaz : false,
         proizvod : "",
-        operater : user.first_name + " " + user.last_name
+        operater : user.first_name + " " + user.last_name,
+        role: user.role
     },(err,docs)=>{
         res.redirect("/operater")
     })

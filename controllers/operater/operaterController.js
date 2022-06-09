@@ -10,7 +10,8 @@ const operaterController = (req,res)=>{
                     name:user.first_name,
                     savjetnici : savjetnici,
                     gradovi : gradovi,
-                    brojTermina : termini.length
+                    brojTermina : termini.length,
+                    role: user.role
                 });
 
             })

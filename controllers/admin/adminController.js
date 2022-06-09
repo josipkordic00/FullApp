@@ -16,7 +16,8 @@ const adminController = (req,res) => {
                     gradovi : gradovi,
                     proizvodi : proizvodi,
                     operateri : operateri,
-                    savjetnici : savjetnici
+                    savjetnici : savjetnici,
+                    role: user.role
                 })
             })
         })
