@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-
+//postavljamo route
 router.use("/", require("./home"));
 router.use("/login", require("../controllers/loginControler"))
 router.use("/logout", require("./logout"))

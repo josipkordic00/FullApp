@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["users"], ["gradovi"]);
 
+//insert grada u bazu - kreiraj nav link
 const saveGradController = (req,res) => {
     //preuzeti podatke
     let name = req.body.name;

@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["termini"]);
 
+//insert u bazu svih podataka iz termini forme
 const noviTerminController = (req,res)=>{
     let user = req.session.user
     db.termini.insert({

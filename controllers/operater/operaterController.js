@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["users"], ["gradovi"], ["proizvodi"]);
 
+//prikazivanje podataka iz baze na operater formi
 const operaterController = (req,res)=>{
     let user = req.session.user;
     db.gradovi.find({},(err,gradovi)=>{

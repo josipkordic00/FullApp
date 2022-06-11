@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp",["proizvodi"]);
 
+//update baze podataka nakon edit forme
 const updateProizvodController = (req,res) =>{
     let id = req.params.id;
     db.proizvodi.update({_id:mongojs.ObjectID(id)},{

@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["users"], ["gradovi"], ["proizvodi"]);
 
+//prikazivanje podataka iz baze na admindashboardu - adminDashboard()
 const adminController = (req,res) => {
     let user = req.session.user;
     db.users.find({},(err,users)=>{

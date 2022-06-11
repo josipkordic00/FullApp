@@ -1,7 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["gradovi"]);
 
-
+//button delete grad
 const deleteGradController = (req,res) => {
     //preuzeti id
     let gradId = req.params.gradId;

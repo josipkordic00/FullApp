@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["termini"]);
 
+//prikazivanje termina klikom na termin - /savjetnik
 const showTerminController = (req,res)=>{
     let user = req.session.user;
     let id = req.params.id;

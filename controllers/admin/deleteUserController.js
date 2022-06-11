@@ -1,7 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["users"]);
 
-
+//button delete user
 const deleteUserController = (req,res) => {
     //preuzeti id
     let userId = req.params.userId;

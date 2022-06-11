@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["proizvodi"]);
 
+//button edit proizvod
 const adminEditProizvodController = (req,res) => {
     let id = req.params.id;
     db.proizvodi.find({_id:mongojs.ObjectID(id)},(err,proizvod)=>{

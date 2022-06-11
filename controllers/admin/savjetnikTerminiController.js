@@ -1,6 +1,8 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["termini"]);
 
+
+//prikazivanje svih termina u tablici - button termini
 const savjetnikTerminiController = (req,res)=>{
     let name = req.params.name;
     let user = req.session.user;

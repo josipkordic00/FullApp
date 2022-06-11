@@ -1,7 +1,8 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["gradovi"]);
 
-const adminEditFormController = (req,res) => {
+//button edit grad
+const adminEditGradController = (req,res) => {
     let id = req.params.id;
     db.gradovi.find({_id:mongojs.ObjectID(id)},(err,grad)=>{
         res.render("admin/adminEditGrad",{
@@ -11,4 +12,4 @@ const adminEditFormController = (req,res) => {
         })
     })
 }
-module.exports = adminEditFormController;
+module.exports = adminEditGradController;

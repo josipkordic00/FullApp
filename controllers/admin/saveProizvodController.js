@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["users"], ["proizvodi"]);
 
+//insert proizvoda u bazu - kreiraj nav link
 const saveProizvodController = (req,res) => {
     //preuzeti podatke
     let name = req.body.name;
