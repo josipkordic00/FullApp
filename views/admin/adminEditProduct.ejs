@@ -138,16 +138,16 @@
                   aria-expanded="false"
                 >
                   <span class="d-none d-md-block"
-                    >Kreiraj <i class="fa fa-angle-down"></i
+                    >Create<i class="fa fa-angle-down"></i
                   ></span>
                   <span class="d-block d-md-none"
                     ><i class="fa fa-plus"></i
                   ></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/admin/create">Korisnika</a></li>
-                  <li><a class="dropdown-item" href="/admin/create_grad">Grad</a></li>
-                    <li><a class="dropdown-item" href="/admin/create_proizvod">Proizvod</a></li>
+                  <li><a class="dropdown-item" href="/admin/create">User</a></li>
+                  <li><a class="dropdown-item" href="/admin/create_city">City</a></li>
+                    <li><a class="dropdown-item" href="/admin/create_product">Product</a></li>
                 </ul>
               </li>
               <!-- ============================================================== -->
@@ -251,7 +251,7 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Kreiraj proizvod</h4>
+              <h4 class="page-title">Create product</h4>
               
             </div>
           </div>
@@ -266,14 +266,14 @@
        <div class="row">
          <div class="col-6 offset-3">
           <div class="card">
-            <form class="form-horizontal" action="/admin/update/proizvod/<%= id %>" method="POST">
+            <form class="form-horizontal" action="/admin/update/product/<%= id %>" method="POST">
               <div class="card-body">
-                <h4 class="card-title">Novi Proizvod</h4>
+                <h4 class="card-title">New Product</h4>
                 <div class="form-group row">
                   <label
                     for="fname"
                     class="col-sm-3 text-end control-label col-form-label"
-                    >Ime proizvoda</label
+                    >Product name</label
                   >
                   <div class="col-sm-9">
                     <input
@@ -282,7 +282,7 @@
                       id="name"
                       name="name"
                       value="<%= name %>"
-                      placeholder="Ime proizvoda"
+                      placeholder="Product name"
                     />
                   </div>
                 </div>
@@ -290,7 +290,7 @@
                   <label
                     for="lname"
                     class="col-sm-3 text-end control-label col-form-label"
-                    >Cijena</label
+                    >Price</label
                   >
                   <div class="col-sm-9">
                     <input
@@ -299,7 +299,7 @@
                       id="price"
                       name="price"
                       value="<%= price %>"
-                      placeholder="Cijena"
+                      placeholder="Price"
                     />
                   </div>
                 </div>

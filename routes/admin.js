@@ -8,45 +8,45 @@ router.get('/',require("../controllers/admin/adminController"))
 
 
 
-//nav-link kreiraj
+//nav-link create
 router.get("/create",(req,res)=>{
     res.render("admin/adminCreateForm");
 })
-router.get("/create_grad",(req,res)=>{
-    res.render("admin/createGrad");
+router.get("/create_city",(req,res)=>{
+    res.render("admin/createCity");
 })
-router.get("/create_proizvod",(req,res)=>{
-    res.render("admin/createProizvod");
+router.get("/create_product",(req,res)=>{
+    res.render("admin/createProduct");
 })
 
 //delete
 router.get("/delete/user/:userId", require("../controllers/admin/deleteUserController"));
-router.get("/delete/grad/:gradId", require("../controllers/admin/deleteGradController"));
-router.get("/delete/proizvod/:proizvodId", require("../controllers/admin/deleteProizvodController.js"));
+router.get("/delete/city/:cityId", require("../controllers/admin/deleteCityController"));
+router.get("/delete/product/:productId", require("../controllers/admin/deleteProductController.js"));
 
 
-//insert u bazu
+//insert db
 router.post("/create/save",require("../controllers/admin/saveController"));
-router.post("/create/grad/save",require("../controllers/admin/saveGradController"));
-router.post("/create/proizvod/save",require("../controllers/admin/saveProizvodController"));
+router.post("/create/city/save",require("../controllers/admin/saveCityController"));
+router.post("/create/product/save",require("../controllers/admin/saveProductController"));
 
 //edit
 router.get("/edit/:id", require("../controllers/admin/adminEditFormController"));
-router.get("/edit/grad/:id", require("../controllers/admin/adminEditGradController"));
-router.get("/edit/proizvod/:id", require("../controllers/admin/adminEditProizvodController"));
+router.get("/edit/city/:id", require("../controllers/admin/adminEditCityController"));
+router.get("/edit/product/:id", require("../controllers/admin/adminEditProductController"));
 
 
-//update u bazu
+//update db
 router.post("/update/:id",require("../controllers/admin/updateController"));
-router.post("/update/grad/:id",require("../controllers/admin/updateGradController"));
-router.post("/update/proizvod/:id",require("../controllers/admin/updateProizvodController"));
+router.post("/update/city/:id",require("../controllers/admin/updateCityController"));
+router.post("/update/product/:id",require("../controllers/admin/updateProductController"));
 
 
 
-//savjetnik
-router.get("/savjetnik/termini/:name",require("../controllers/admin/savjetnikTerminiController"))
+//doctor
+router.get("/doctor/appointments/:name",require("../controllers/admin/doctorAppointmentsController"))
 
-//provjera je li user logiran kao admin
+//checking user role(admin)
 function checkAdmin(req,res,next){
     let user = req.session.user;
     if(user){

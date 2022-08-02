@@ -1,10 +1,10 @@
 const mongojs = require("mongojs");
-const db = mongojs("FullApp",["proizvodi"]);
+const db = mongojs("FullApp",["products"]);
 
-//update baze podataka nakon edit forme
-const updateProizvodController = (req,res) =>{
+//db update after edit form
+const updateProductController = (req,res) =>{
     let id = req.params.id;
-    db.proizvodi.update({_id:mongojs.ObjectID(id)},{
+    db.products.update({_id:mongojs.ObjectID(id)},{
         $set : {
             name : req.body.name,
             price : req.body.price,
@@ -17,4 +17,4 @@ const updateProizvodController = (req,res) =>{
 
 
 
-module.exports = updateProizvodController
+module.exports = updateProductController

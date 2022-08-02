@@ -98,7 +98,7 @@
               <!--End Logo icon -->
               <!-- Logo text -->
               <span class="logo-text ms-2">
-                OPERATER
+                SECRETARY
               </span>
               <!-- Logo icon -->
               <!-- <b class="logo-icon"> -->
@@ -220,7 +220,7 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
-                  href="/operater"
+                  href="/secretary"
                   aria-expanded="false"
                   ><i class="mdi mdi-view-dashboard"></i
                   ><span class="hide-menu">Dashboard</span></a
@@ -232,7 +232,7 @@
                  
                   aria-expanded="false"
                   ><i class="mdi mdi-chart-bar"></i
-                  ><span class="hide-menu">Termini <span><%=  brojTermina %></span></span></a
+                  ><span class="hide-menu">Appointments <span><%=  appointmentCount %></span></span></a
                 >
               
             </ul>
@@ -248,14 +248,14 @@
       <!-- Page wrapper  -->
       <!-- ============================================================== -->
       <div class="page-wrapper">
-          <form action="/operater/noviTermin" method="POST">
+          <form action="/secretary/newAppointment" method="POST">
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title " >Novi Termin</h4>
+              <h4 class="page-title " >New Appointment</h4>
               <div class="ms-auto text-end">
             
                     <button type="submit" class="btn btn-primary m-b-15">
@@ -281,20 +281,20 @@
               <div class="card">
                
                   <div class="card-body">
-                    <h4 class="card-title">Stranka Info</h4>
+                    <h4 class="card-title">Patient Info</h4>
                     <div class="form-group row">
                       <label
                         for="fname"
                         class="col-sm-3 text-end control-label col-form-label"
-                        >Ime stranke</label
+                        >First name</label
                       >
                       <div class="col-sm-9">
                         <input
                           type="text"
                           class="form-control"
                           id="fname"
-                          name="ime_stranke"
-                          placeholder="Ime stranke"
+                          name="name_patient"
+                          placeholder="Patient first name"
                         />
                       </div>
                     </div>
@@ -302,15 +302,15 @@
                       <label
                         for="lname"
                         class="col-sm-3 text-end control-label col-form-label"
-                        >Prezime Stranke</label
+                        >Last name</label
                       >
                       <div class="col-sm-9">
                         <input
                           type="text"
                           class="form-control"
                           id="lname"
-                          name="prezime_stranke"
-                          placeholder="Prezime stranke"
+                          name="lastname_patient"
+                          placeholder="Patient last name"
                         />
                       </div>
                     </div>
@@ -318,15 +318,15 @@
                       <label
                         for="lname"
                         class="col-sm-3 text-end control-label col-form-label"
-                        >Godiste Stranke</label
+                        >Patient years</label
                       >
                       <div class="col-sm-9">
                         <input
                           type="text"
                           class="form-control"
                           id="lname"
-                          name="godiste_stranke"
-                          placeholder="Godiste stranke"
+                          name="years_patient"
+                          placeholder="Patient years"
                         />
                       </div>
                     </div>
@@ -334,61 +334,42 @@
                       <label
                         for="email1"
                         class="col-sm-3 text-end control-label col-form-label"
-                        >Ime supruznika</label
+                        >Spouse name</label
                       >
                       <div class="col-sm-9">
                         <input
                           type="text"
                           class="form-control"
                           id="email1"
-                          name="ime_supruznika"
-                          placeholder="Ime supruznika"
+                          name="name_spouse"
+                          placeholder="Spouse first name"
                         />
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label
-                        for="cono1"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Prezime supruznika</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="prezime_supruznika"
-                          id="cono1"
-                          placeholder="Prezime supruznika"
-                        />
-                      </div>
-                    </div>
+            
                     <div class="form-group row">
                         <label
                           for="cono1"
                           class="col-sm-3 text-end control-label col-form-label"
-                          >Godiste supruznika</label
+                          >Spouse years</label
                         >
                         <div class="col-sm-9">
                           <input
                             type="text"
                             class="form-control"
-                            name="godiste_supruznika"
+                            name="years_spouse"
                             id="cono1"
-                            placeholder="Godiste supruznika"
+                            placeholder="Spouse years"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
-                          <label for="">Fiksni telefon</label>
-                          <input type="text" class="form-control" name="fiksni_telefon" placeholder="Fiksni telefon">
-                      </div>
-                      <div class="form-group row">
-                        <label for="">Mobilni telefon</label>
-                        <input type="text" class="form-control" name="mobilni_telefon" placeholder="Mobilni telefon">
+                        <label for="">Mobile phone</label>
+                        <input type="text" class="form-control" name="mobile_phone" placeholder="Mobile phone">
                     </div>
                     <div class="form-group row">
-                        <label for="">Adresa</label>
-                        <input type="text" class="form-control" name="adresa" placeholder="Adresa">
+                        <label for="">Adress</label>
+                        <input type="text" class="form-control" name="adress" placeholder="Adress">
                     </div>
                     
                   </div>
@@ -405,61 +386,71 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title mb-0">Termin Info</h5>
+                  <h5 class="card-title mb-0">Appointment Info</h5>
                   <div class="form-group mt-3">
                     <label
-                      >Datum
+                      >Date
                       <small class="text-muted">dd/mm/yyyy</small></label
                     >
                     <input
                       type="text"
                       class="form-control date-inputmask"
                       id="date-mask"
-                      name="datum_zakazivanja"
-                      placeholder="Datum termina"
+                      name="appointment_date"
+                      placeholder="Appointment Date"
                     />
                   </div>
                   <div class="form-group mt-3">
                     <label
-                      >Vrijeme
-                      <small class="text-muted">sat/min/am-pm</small></label
+                      >Appointment Time
+                      <small class="text-muted">hr/min/am-pm</small></label
                     >
                     <input
                       type="time"
                       class="form-control date-inputmask"
                       id="date-mask"
-                      name="vrijeme_zakazivanja"
+                      name="appointment_time"
                     />
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-3 m-t-5">Savjetnik</label>
+                      <label class="col-md-3 m-t-5">Doctor</label>
                       <div class="col-md-9">
-                          <select name="savjetnik" class="form-control">
-                            <% for (let i = 0; i<savjetnici.length;i++){ %>
-                              <option value="<%= savjetnici[i].first_name + " " + savjetnici[i].last_name %>"><%= savjetnici[i].first_name + " " + savjetnici[i].last_name %></option>
+                          <select name="doctor" class="form-control">
+                            <% for (let i = 0; i<doctors.length;i++){ %>
+                              <option value="<%= doctors[i].first_name + " " + doctors[i].last_name %>"><%= doctors[i].first_name + " " + doctors[i].last_name %></option>
                               <% } %>
                           </select>
                       </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-md-3 m-t-5">Mjesto rada</label>
+                    <label class="col-md-3 m-t-5">City</label>
                     <div class="col-md-9">
-                        <select name="grad" class="form-control">
-                          <% for (let i = 0; i<gradovi.length;i++){ %>
-                            <option value="<%= gradovi[i].name %>"><%= gradovi[i].name %></option>
+                        <select name="city" class="form-control">
+                          <% for (let i = 0; i<cities.length;i++){ %>
+                            <option value="<%= cities[i].name %>"><%= cities[i].name %></option>
                             <% } %>
                         </select>
                     </div>
                 </div>
+                <div class="form-group row">
+                  <label class="col-md-3 m-t-5">Urgent</label>
+                  <div class="col-md-9">
+                      <select name="urgent" class="form-control">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                          
+                      </select>
+                  </div>
+                  
                   
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Dodatno</h5>
+                  <h5 class="card-title">Addition</h5>
                   <div class="row mb-3 align-items-center">
                     <div class="col-lg-3 col-md-12 text-end">
-                      <span>Djeca</span>
+                      <span>Children</span>
                     </div>
                     <div class="col-lg-9 col-md-12">
                       <input
@@ -467,14 +458,14 @@
                         
                         class="form-control"
                        
-                        placeholder="Imena djece"
-                        name="djeca"
+                        placeholder="Children names"
+                        name="children"
                       />
                     </div>
                   </div>
                   <div class="row mb-3 align-items-center">
                     <div class="col-lg-3 col-md-12 text-end">
-                      <span>Operacije</span>
+                      <span>Operations</span>
                     </div>
                     <div class="col-lg-9 col-md-12">
                       <input
@@ -482,14 +473,14 @@
                         
                         class="form-control"
                        
-                        placeholder="Operacije"
-                        name="operacija"
+                        placeholder="Operations"
+                        name="operation"
                       />
                     </div>
                   </div>
                   <div class="row mb-3 align-items-center">
                     <div class="col-lg-3 col-md-12 text-end">
-                      <span>Terapija</span>
+                      <span>Therapy</span>
                     </div>
                     <div class="col-lg-9 col-md-12">
                       <input
@@ -497,8 +488,8 @@
                         
                         class="form-control"
                        
-                        placeholder="Terapija"
-                        name="terapija"
+                        placeholder="Therapy"
+                        name="therapy"
                       />
                     </div>
                   </div>
@@ -512,8 +503,8 @@
           <div class="row">
               <div class="col-12">
                   <div class="card p-2">
-                      <h4 class="card-title ">Napomena</h4>
-                      <input type="text" class="form-control" name="napomena">
+                      <h4 class="card-title ">Remark</h4>
+                      <input type="text" class="form-control" name="Remark">
                   </div>
               </div>
           </div>

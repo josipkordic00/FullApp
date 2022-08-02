@@ -137,16 +137,16 @@
                   aria-expanded="false"
                 >
                   <span class="d-none d-md-block"
-                    >Kreiraj <i class="fa fa-angle-down"></i
+                    >Create <i class="fa fa-angle-down"></i
                   ></span>
                   <span class="d-block d-md-none"
                     ><i class="fa fa-plus"></i
                   ></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/admin/create">Korisnika</a></li>
-                  <li><a class="dropdown-item" href="/admin/create_grad">Grad</a></li>
-                    <li><a class="dropdown-item" href="/admin/create_proizvod">Proizvod</a></li>
+                  <li><a class="dropdown-item" href="/admin/create">User</a></li>
+                  <li><a class="dropdown-item" href="/admin/create_city">City</a></li>
+                    <li><a class="dropdown-item" href="/admin/create_product">Product</a></li>
                 </ul>
               </li>
               <!-- ============================================================== -->
@@ -292,22 +292,22 @@
             <div class="col-lg-6">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Operateri</h4>
+                  <h4 class="card-title">Secretaries</h4>
                 </div>
                 <div class="comment-widgets scrollable">
                   <!-- Comment Row -->
-                  <% for(let i = 0;i < operateri.length ; i++) {%>
+                  <% for(let i = 0;i < secretaries.length ; i++) {%>
                   <div class="d-flex flex-row comment-row mt-0">
                     <div class="p-2">
                       
                     </div>
                     <div class="comment-text w-100">
-                      <h6 class="font-medium"><%= operateri[i].first_name + " " + operateri[i].last_name %></h6>
+                      <h6 class="font-medium"><%= secretaries[i].first_name + " " + secretaries[i].last_name %></h6>
                       
                       <div class="comment-footer">
-                        <span class="text-muted float-end">Password: <%= operateri[i].password %></span>
+                        <span class="text-muted float-end">Password: <%= secretaries[i].password %></span>
                       
-                        <a href="admin/edit/<%= operateri[i]._id %>"><button
+                        <a href="admin/edit/<%= secretaries[i]._id %>"><button
                           type="button"
                           class="btn btn-success btn-sm text-white"
                         >
@@ -316,7 +316,7 @@
                         <button
                           type="button"
                           class="btn btn-danger btn-sm text-white delete-user-btn"
-                           data-id="<%= operateri[i]._id %>"
+                           data-id="<%= secretaries[i]._id %>"
                         >
                           Delete
                         </button>
@@ -328,21 +328,21 @@
               </div>
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Gradovi</h4>
+                  <h4 class="card-title">Cities</h4>
                 </div>
                 <div class="comment-widgets scrollable">
-                  <% for(let i = 0; i < gradovi.length ; i++) {%>
+                  <% for(let i = 0; i < cities.length ; i++) {%>
                     <div class="d-flex flex-row comment-row mt-0">
                       <div class="p-2">
                     
                       </div>
                       <div class="comment-text w-100">
-                        <h6 class="font-medium"><%= gradovi[i].name%></h6>
+                        <h6 class="font-medium"><%= cities[i].name%></h6>
                       
                         <div class="comment-footer">
-                          <span class="text-muted float-end">Postanski broj: <%= gradovi[i].zip %></span>
+                          <span class="text-muted float-end">Zip code: <%= cities[i].zip %></span>
                           
-                          <a href="admin/edit/grad/<%= gradovi[i]._id %>"><button
+                          <a href="admin/edit/city/<%= cities[i]._id %>"><button
                             type="button"
                             class="btn btn-success btn-sm text-white"
                           >
@@ -350,8 +350,8 @@
                           </button></a>
                           <button
                             type="button"
-                            class="btn btn-danger btn-sm text-white delete-grad-btn"
-                           data-id="<%= gradovi[i]._id %>"
+                            class="btn btn-danger btn-sm text-white delete-city-btn"
+                           data-id="<%= cities[i]._id %>"
                           >
                             Delete
                           </button>
@@ -762,27 +762,27 @@
             <div class="col-lg-6">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Savjetnici</h4>
+                  <h4 class="card-title">Doctors</h4>
                 </div>
                 <div class="comment-widgets scrollable">
                   <!-- Comment Row -->
-                  <% for(let i = 0; i < savjetnici.length ; i++) {%>
+                  <% for(let i = 0; i < doctors.length ; i++) {%>
                   <div class="d-flex flex-row comment-row mt-0">
                     <div class="p-2">
                   
                     </div>
                     <div class="comment-text w-100">
-                      <h6 class="font-medium"><%= savjetnici[i].first_name + " " + savjetnici[i].last_name %></h6>
+                      <h6 class="font-medium"><%= doctors[i].first_name + " " + doctors[i].last_name %></h6>
                       
                       <div class="comment-footer">
-                        <span class="text-muted float-end">Password: <%= savjetnici[i].password %></span>
-                        <a href="/admin/savjetnik/termini/<%= savjetnici[i].first_name + " " + savjetnici[i].last_name %>" type=button
+                        <span class="text-muted float-end">Password: <%= doctors[i].password %></span>
+                        <a href="/admin/doctor/appointments/<%= doctors[i].first_name + " " + doctors[i].last_name %>" type=button
                           type="button"
                           class="btn btn-cyan btn-sm text-white"
                         >
-                          Termini
+                          Appointments
                         </a>
-                        <a href="admin/edit/<%= savjetnici[i]._id %>"><button
+                        <a href="admin/edit/<%= doctors[i]._id %>"><button
                           type="button"
                           class="btn btn-success btn-sm text-white"
                         >
@@ -791,7 +791,7 @@
                         <button
                           type="button"
                           class="btn btn-danger btn-sm text-white delete-user-btn"
-                           data-id="<%= savjetnici[i]._id %>"
+                           data-id="<%= doctors[i]._id %>"
                         >
                           Delete
                         </button>
@@ -803,22 +803,22 @@
               </div>
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Proizvodi</h4>
+                  <h4 class="card-title">Products</h4>
                 </div>
                 <div class="comment-widgets scrollable">
-                  <% for(let i = 0; i < proizvodi.length ; i++) {%>
+                  <% for(let i = 0; i < products.length ; i++) {%>
                     <div class="d-flex flex-row comment-row mt-0">
                       <div class="p-2">
                     
                       </div>
                       <div class="comment-text w-100">
-                        <h6 class="font-medium"><%= proizvodi[i].name %></h6>
+                        <h6 class="font-medium"><%= products[i].name %></h6>
                       
                         <div class="comment-footer">
-                          <span class="text-muted float-end">Cijena: <%= proizvodi[i].price %> KM</span>
+                          <span class="text-muted float-end">Cijena: <%= products[i].price %> KM</span>
                         
                         </a>
-                        <a href="admin/edit/proizvod/<%= proizvodi[i]._id %>"><button
+                        <a href="admin/edit/product/<%= products[i]._id %>"><button
                           type="button"
                           class="btn btn-success btn-sm text-white"
                         >
@@ -826,8 +826,8 @@
                         </button></a>
                           <button
                             type="button"
-                            class="btn btn-danger btn-sm text-white delete-proizvod-btn"
-                           data-id="<%= proizvodi[i]._id %>"
+                            class="btn btn-danger btn-sm text-white delete-product-btn"
+                           data-id="<%= products[i]._id %>"
                           >
                             Delete
                           </button>
@@ -1285,13 +1285,13 @@
           })
         }
       })
-      $(".delete-grad-btn").on('click',function(){
+      $(".delete-city-btn").on('click',function(){
         let id = $(this).attr('data-id');
         let potvrda = confirm("Jeste li sigurni ?");
 
         if(potvrda){
           $.ajax({
-            url: `/admin/delete/grad/${id}`
+            url: `/admin/delete/city/${id}`
           })
           .then(res => {
             if(res == "ok"){
@@ -1300,13 +1300,13 @@
           })
         }
       })
-      $(".delete-proizvod-btn").on('click',function(){
+      $(".delete-product-btn").on('click',function(){
         let id = $(this).attr('data-id');
         let potvrda = confirm("Jeste li sigurni ?");
 
         if(potvrda){
           $.ajax({
-            url: `/admin/delete/proizvod/${id}`
+            url: `/admin/delete/product/${id}`
           })
           .then(res => {
             if(res == "ok"){

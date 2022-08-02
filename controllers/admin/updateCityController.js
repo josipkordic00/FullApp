@@ -1,10 +1,10 @@
 const mongojs = require("mongojs");
-const db = mongojs("FullApp",["gradovi"]);
+const db = mongojs("FullApp",["cities"]);
 
-//update baze podataka nakon edit forme
+//db update after edit form
 const updateController = (req,res) =>{
     let id = req.params.id;
-    db.gradovi.update({_id:mongojs.ObjectID(id)},{
+    db.cities.update({_id:mongojs.ObjectID(id)},{
         $set : {
             name : req.body.name,
             zip : req.body.zip,

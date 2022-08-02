@@ -15,6 +15,7 @@
     />
     <meta name="robots" content="noindex,nofollow" />
     <title>Admin</title>
+    <base href="/">
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -137,22 +138,22 @@
                   aria-expanded="false"
                 >
                   <span class="d-none d-md-block"
-                    >Kreiraj <i class="fa fa-angle-down"></i
+                    >Create <i class="fa fa-angle-down"></i
                   ></span>
                   <span class="d-block d-md-none"
                     ><i class="fa fa-plus"></i
                   ></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/admin/create">Korisnika</a></li>
-                  <li><a class="dropdown-item" href="/admin/create_grad">Grad</a></li>
-                    <li><a class="dropdown-item" href="/admin/create_proizvod">Proizvod</a></li>
+                  <li><a class="dropdown-item" href="/admin/create">User</a></li>
+                  <li><a class="dropdown-item" href="/admin/create_city">City</a></li>
+                    <li><a class="dropdown-item" href="/admin/create_product">Product</a></li>
                 </ul>
               </li>
               <!-- ============================================================== -->
               <!-- Search -->
               <!-- ============================================================== -->
-              
+             
             </ul>
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
@@ -250,7 +251,7 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Kreiraj proizvod</h4>
+              <h4 class="page-title">Create new city</h4>
               
             </div>
           </div>
@@ -265,14 +266,14 @@
        <div class="row">
          <div class="col-6 offset-3">
           <div class="card">
-            <form class="form-horizontal" action="/admin/create/proizvod/save" method="POST">
+            <form class="form-horizontal" action="/admin/update/city/<%= id %>" method="POST">
               <div class="card-body">
-                <h4 class="card-title">Novi Proizvod</h4>
+                <h4 class="card-title">New city</h4>
                 <div class="form-group row">
                   <label
                     for="fname"
                     class="col-sm-3 text-end control-label col-form-label"
-                    >Ime proizvoda</label
+                    >City name</label
                   >
                   <div class="col-sm-9">
                     <input
@@ -280,7 +281,8 @@
                       class="form-control"
                       id="name"
                       name="name"
-                      placeholder="Ime proizvoda"
+                      value="<%= name %>"
+                      placeholder="City name"
                     />
                   </div>
                 </div>
@@ -288,21 +290,22 @@
                   <label
                     for="lname"
                     class="col-sm-3 text-end control-label col-form-label"
-                    >Cijena</label
+                    >Zip code</label
                   >
                   <div class="col-sm-9">
                     <input
                       type="text"
                       class="form-control"
-                      id="price"
-                      name="price"
-                      placeholder="Cijena"
+                      id="zip"
+                      name="zip"
+                      value="<%= zip %>"
+                      placeholder="Zip code"
                     />
                   </div>
                 </div>
                 
                   <button type="submit" class="btn btn-primary">
-                    Kreiraj
+                    Edit
                   </button>
                 </div>
               </div>

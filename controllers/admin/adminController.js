@@ -1,23 +1,23 @@
 const mongojs = require("mongojs");
-const db = mongojs("FullApp", ["users"], ["gradovi"], ["proizvodi"]);
+const db = mongojs("FullApp", ["users"], ["cities"], ["products"]);
 
-//prikazivanje podataka iz baze na admindashboardu - adminDashboard()
+//showing data from db on admin dashboard - adminDashboard()
 const adminController = (req,res) => {
     let user = req.session.user;
     db.users.find({},(err,users)=>{
-        db.proizvodi.find({}, (err,proizvodi)=>{
-            db.gradovi.find({},(err,gradovi)=>{
-                    let operateri = users.filter(user => user.role == "operater");
-                    let savjetnici = users.filter(user => user.role == "savjetnik");
+        db.products.find({}, (err,products)=>{
+            db.cities.find({},(err,cities)=>{
+                    let secretaries = users.filter(user => user.role == "secretary");
+                    let doctors = users.filter(user => user.role == "doctor");
 
 
 
                 res.render("admin/adminDashboard",{
                     name : user.first_name,
-                    gradovi : gradovi,
-                    proizvodi : proizvodi,
-                    operateri : operateri,
-                    savjetnici : savjetnici,
+                    cities : cities,
+                    products : products,
+                    secretaries : secretaries,
+                    doctors : doctors,
                     role: user.role
                 })
             })

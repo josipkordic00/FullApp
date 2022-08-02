@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-//login forma
+//login form
 router.get("/", (req,res)=>{
     res.render("index");
 });

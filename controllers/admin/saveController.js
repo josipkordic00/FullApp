@@ -1,9 +1,9 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["users"]);
 
-//insert korisnika u bazu - kreiraj nav link
+//inserting user in db - create nav link
 const saveController = (req,res) => {
-    //preuzeti podatke
+    //user data
     let firstName = req.body.first_name;
     let lastName = req.body.last_name;
     let pw = req.body.password;

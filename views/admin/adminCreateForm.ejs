@@ -138,16 +138,16 @@
                   aria-expanded="false"
                 >
                   <span class="d-none d-md-block"
-                    >Kreiraj <i class="fa fa-angle-down"></i
+                    >Create <i class="fa fa-angle-down"></i
                   ></span>
                   <span class="d-block d-md-none"
                     ><i class="fa fa-plus"></i
                   ></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/admin/create">Korisnika</a></li>
-                  <li><a class="dropdown-item" href="/admin/create_grad">Grad</a></li>
-                    <li><a class="dropdown-item" href="/admin/create_proizvod">Proizvod</a></li>
+                  <li><a class="dropdown-item" href="/admin/create">User</a></li>
+                  <li><a class="dropdown-item" href="/admin/create_city">City</a></li>
+                    <li><a class="dropdown-item" href="/admin/create_product">Product</a></li>
                 </ul>
               </li>
               <!-- ============================================================== -->
@@ -251,7 +251,7 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Kreiraj korisnika</h4>
+              <h4 class="page-title">Create user</h4>
               
             </div>
           </div>
@@ -268,12 +268,12 @@
           <div class="card">
             <form class="form-horizontal" action="/admin/create/save" method="POST">
               <div class="card-body">
-                <h4 class="card-title">Osobni podaci</h4>
+                <h4 class="card-title">Personal data</h4>
                 <div class="form-group row">
                   <label
                     for="fname"
                     class="col-sm-3 text-end control-label col-form-label"
-                    >Ime</label
+                    >First name</label
                   >
                   <div class="col-sm-9">
                     <input
@@ -281,7 +281,7 @@
                       class="form-control"
                       id="first_name"
                       name="first_name"
-                      placeholder="Ime"
+                      placeholder="First name"
                     />
                   </div>
                 </div>
@@ -289,7 +289,7 @@
                   <label
                     for="lname"
                     class="col-sm-3 text-end control-label col-form-label"
-                    >Prezime</label
+                    >Last name</label
                   >
                   <div class="col-sm-9">
                     <input
@@ -297,7 +297,7 @@
                       class="form-control"
                       id="last_name"
                       name="last_name"
-                      placeholder="Prezime"
+                      placeholder="Last name"
                     />
                   </div>
                 </div>
@@ -323,12 +323,12 @@
                   <label
                     for="cono1"
                     class="col-sm-3 text-end control-label col-form-label"
-                    >Uloga</label
+                    >Role</label
                   >
                   <div class="col-sm-9">
                     <select name="role" id="" class="form-control">
-                      <option value="operater">Operater</option>
-                      <option value="savjetnik">Savjetnik</option>
+                      <option value="secretary">Secretary</option>
+                      <option value="doctor">Doctor</option>
                       <option value="admin">Admin</option>
                     </select>
                   </div>
@@ -337,7 +337,7 @@
               <div class="border-top">
                 <div class="card-body">
                   <button type="submit" class="btn btn-primary">
-                    Kreiraj
+                    Create
                   </button>
                 </div>
               </div>

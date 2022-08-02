@@ -2,7 +2,7 @@ const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["users"]);
 
 const loginControler = (req,res)=>{
-    //preuzeti podatke req.body
+    //data req.body
     let name = req.body.name;
     let pw = req.body.password;
     db.users.find({
@@ -14,21 +14,21 @@ const loginControler = (req,res)=>{
             res.redirect("/");
         }else{
             if(docs.length === 1){
-                //pronadjen korisnik
+                //user found
                 let user = docs[0];
                 req.session.user = user;
                 if(user.role == "admin"){
                     res.redirect("/admin")
-                }else if(user.role == "operater"){
-                    res.redirect("/operater")
-                }else if(user.role == "savjetnik"){
-                    res.redirect("/savjetnik")
+                }else if(user.role == "secretary"){
+                    res.redirect("/secretary")
+                }else if(user.role == "doctor"){
+                    res.redirect("/doctor")
                 }
                 else{
                     res.redirect("/");
                 }
             }else{
-                //podaci netocni
+                //incorrect data
                 res.redirect("/")
             }
         }

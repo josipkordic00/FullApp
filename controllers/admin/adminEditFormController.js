@@ -6,7 +6,7 @@ const adminEditFormController = (req,res) => {
     let id = req.params.id;
     db.users.find({_id:mongojs.ObjectID(id)},(err,user)=>{
         res.render("admin/adminEditForm",{
-            //funkcija vraca podatke u array-u
+            //function returns data in array
             name : user[0].first_name,
             lastname: user[0].last_name,
             password: user[0].password,
