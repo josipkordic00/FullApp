@@ -13,5 +13,6 @@ const showAppointmentController = (req,res)=>{
             role: user.role
         })
     })
+
 }
 module.exports = showAppointmentController;

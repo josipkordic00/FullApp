@@ -1,6 +1,7 @@
 const mongojs = require("mongojs");
 const db = mongojs("FullApp", ["users"]);
 
+
 const loginControler = (req,res)=>{
     //data req.body
     let name = req.body.name;

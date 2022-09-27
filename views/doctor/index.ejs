@@ -252,7 +252,7 @@
                     Number(a.active)) %>
                     <% 
                     
-                    for(let i= 0;i <appointments.length ; i++){ %>
+                    for(let i= 0;i < appointments.length ; i++){ %>
                       <%
                         let date = appointments[i].appointment_date;
                         let time = appointments[i].appointment_time;
@@ -264,6 +264,11 @@
                         var year = today.getYear() + 1900;
                         var hours = today.getHours(); // gives the value in 24 hours format
                         var minutes = today.getMinutes();
+                        var dd = date.split("/")
+                        var dyear = dd[2];
+                        var dmonth = dd[1];
+                        var dday = dd[0];
+                       
                         if(minutes < 10){
                           minutes = "0"+minutes;
                         }
@@ -275,18 +280,26 @@
                         }
                         
                         let todayTime = hours+":"+minutes;
-                        let todayDate = date2+"/"+month+"/"+year;
+                      
 
-                        console.log(todayTime)
-                        console.log(time)
-                        console.log(todayDate)
-                        console.log(date)
+                  
+                      
                         
 
-                        if (todayDate.toLocaleString() >= date.toLocaleString() && todayTime.toLocaleString() >= time.toLocaleString()){
-                          appointments[i].active = false;
+                        if(todayTime >= time){
+                          if(parseInt(date2) >= parseInt(dday)){
+                            if(parseInt(month) >= parseInt(dmonth)){
+                              if(parseInt(year) >= parseInt(dyear)){
+                                appointments[i].active = false;
+                              }
+                            }
+                            
 
+                          }
                         }
+                          
+
+                        
 
 
 

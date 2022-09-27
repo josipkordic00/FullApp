@@ -254,8 +254,8 @@
           <div class="row">
             <!-- Column -->
             
-          
-            <div class="col-md-6 col-lg-2 col-xlg-3">
+            
+            <div class="w-50 d-flex flex-row justify-content-between col-md-6 col-lg-2 col-xlg-3">
               <div class="card card-hover">
                    <div class="card-body">
                        <h5 class="card-title"><%= appointment.appointment_time %>h 
@@ -298,6 +298,50 @@
                        </form>
                    </div>
               </div>
+              <% if(appointment.active) {%>
+              <div class="card card-hover">
+                   <div class="card-body">
+                       <h5 class="card-title">Choose product
+                    </h5>
+                   </div>
+                   <ul class="list-group">
+                        <li class="list-group-item">
+                            Patient: <button class="btn btn-sm btn-info form-control">
+                                <%= appointment.name_patient + " " + appointment.lastname_patient %>
+                            </button>
+                        </li>
+                        <li class="list-group-item">
+                            Years: <button class="btn btn-sm btn-info form-control">
+                                <%= appointment.years_patient %>
+                            </button>
+                        </li>
+                        <li class="list-group-item">
+                            Mobile phone: <button class="btn btn-sm btn-info form-control">
+                                <%= appointment.mobile_phone %>
+                            </button>
+                        </li>
+                        <li class="list-group-item">
+                            Adress: <button class="btn btn-sm btn-info form-control">
+                                <%= appointment.adress %>
+                            </button>
+                        </li>
+                   </ul>
+                   <div class="card-footer">
+                       <form action="/doctor/report/<%= appointment._id %>" method="POST">
+                        <% if(appointment.active) {%>
+                           <button type="submit" class="btn btn-danger form-control" >
+                               Close
+                           </button>
+                           <% }else {%>
+                            <button type="submit" class="btn btn-danger form-control d-none" >
+                                Close
+                            </button>
+                            <% } %>
+                       </form>
+                   </div>
+              </div>
+              <% } %>
+            
             </div>  
         <footer class="footer text-center">
           
