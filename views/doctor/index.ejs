@@ -286,17 +286,18 @@
                       
                         
 
-                        if(todayTime >= time){
+                        
                           if(parseInt(date2) >= parseInt(dday)){
                             if(parseInt(month) >= parseInt(dmonth)){
                               if(parseInt(year) >= parseInt(dyear)){
-                                appointments[i].active = false;
+                                if(todayTime >= time){
+                                  appointments[i].active = false;
+                                }
                               }
-                            }
                             
 
+                            }
                           }
-                        }
                           
 
                         

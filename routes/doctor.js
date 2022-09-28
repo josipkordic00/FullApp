@@ -9,6 +9,7 @@ router.get("/",require("../controllers/doctor/doctorController"))
 //db update appointments
 router.post("/report/:id", require("../controllers/doctor/reportController"))
 
+
 //checking user role(doctor)
 function checkDoctor(req,res,next){
     let user = req.session.user;

@@ -288,11 +288,11 @@
                        <form action="/doctor/report/<%= appointment._id %>" method="POST">
                         <% if(appointment.active) {%>
                            <button type="submit" class="btn btn-danger form-control" >
-                               Close
+                               Complete
                            </button>
                            <% }else {%>
                             <button type="submit" class="btn btn-danger form-control d-none" >
-                                Close
+                                Complete
                             </button>
                             <% } %>
                        </form>
@@ -306,39 +306,29 @@
                    </div>
                    <ul class="list-group">
                         <li class="list-group-item">
-                            Patient: <button class="btn btn-sm btn-info form-control">
-                                <%= appointment.name_patient + " " + appointment.lastname_patient %>
+                            Product:<%let temp; %>
+                             <select name="product" class="form-control">
+                              <% for (let i = 0; i<products.length;i++){ %>
+                                <option value="<%= products[i].name %>"><%= products[i].name %></option>
+                                <% temp = products[i].price;
+                              } %>
+                            </select>
+                        </li>
+                        <li class="list-group-item">
+                            Price: <button class="btn btn-sm btn-info form-control">
+                                <%= temp %> KM
                             </button>
                         </li>
                         <li class="list-group-item">
-                            Years: <button class="btn btn-sm btn-info form-control">
-                                <%= appointment.years_patient %>
+                          <form action="/doctor/report/<%= appointment._id %>" method="POST">
+                            <button type="submit" class="btn btn-sm btn-success form-control">
+                                Save & Complete
                             </button>
+                          </form>
                         </li>
-                        <li class="list-group-item">
-                            Mobile phone: <button class="btn btn-sm btn-info form-control">
-                                <%= appointment.mobile_phone %>
-                            </button>
-                        </li>
-                        <li class="list-group-item">
-                            Adress: <button class="btn btn-sm btn-info form-control">
-                                <%= appointment.adress %>
-                            </button>
-                        </li>
+                        
                    </ul>
-                   <div class="card-footer">
-                       <form action="/doctor/report/<%= appointment._id %>" method="POST">
-                        <% if(appointment.active) {%>
-                           <button type="submit" class="btn btn-danger form-control" >
-                               Close
-                           </button>
-                           <% }else {%>
-                            <button type="submit" class="btn btn-danger form-control d-none" >
-                                Close
-                            </button>
-                            <% } %>
-                       </form>
-                   </div>
+                   
               </div>
               <% } %>
             
