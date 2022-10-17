@@ -256,48 +256,28 @@
                       <%
                         let date = appointments[i].appointment_date;
                         let time = appointments[i].appointment_time;
-                            
-                        
+                        sdate = date.split("/");
+                        stime = time.split(":");
+                        let year = sdate[2];
+                        let month = parseInt(sdate[1]) - 1;
+                        let day = sdate[0];
+                        let hour = stime[0];
+                        let minute = stime[1];
+                        let second = "00"; 
+                        var date2 = new Date(year, month, day, hour, minute, second);
                         var today = new Date();
-                        var date2 = today.getDate();
-                        var month = today.getMonth() + 1;
-                        var year = today.getYear() + 1900;
-                        var hours = today.getHours(); // gives the value in 24 hours format
-                        var minutes = today.getMinutes();
-                        var dd = date.split("/")
-                        var dyear = dd[2];
-                        var dmonth = dd[1];
-                        var dday = dd[0];
-                       
-                        if(minutes < 10){
-                          minutes = "0"+minutes;
-                        }
-                        if(date2 < 10){
-                          date2 = "0"+date2;
-                        }
-                        if(month < 10){
-                          month = "0"+month;
-                        }
                         
-                        let todayTime = hours+":"+minutes;
-                      
+                        if (date2.getTime() < today.getTime()){
+                          appointments[i].active = false;
+                        }
+
 
                   
                       
                         
 
                         
-                          if(parseInt(date2) >= parseInt(dday)){
-                            if(parseInt(month) >= parseInt(dmonth)){
-                              if(parseInt(year) >= parseInt(dyear)){
-                                if(todayTime >= time){
-                                  appointments[i].active = false;
-                                }
-                              }
-                            
-
-                            }
-                          }
+                
                           
 
                         
