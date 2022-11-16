@@ -32,5 +32,4 @@ const newAppointmentController = (req,res)=>{
         res.redirect("/secretary")
     })
 }
-
 module.exports = newAppointmentController;
