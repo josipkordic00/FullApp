@@ -7,6 +7,7 @@ When a person calls the clinic, the receptionist answers and enters the person's
 Database for this application is created locally so to run application, you need to install mongodb, then insert this in mongodb shell:
 
 use FullApp
+
 db.users.insert({first_name:"admin",last_name:"admin",password:"admin",role:"admin"})
 db.users.insert({first_name:"doctor",last_name:"doctor",password:"doctor",role:"doctor"})
 db.users.insert({first_name:"secretary",last_name:"secretary",password:"secretary",role:"secretary"})
