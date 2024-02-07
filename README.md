@@ -12,6 +12,8 @@ db.users.insert({first_name:"admin",last_name:"admin",password:"admin",role:"adm
 db.users.insert({first_name:"doctor",last_name:"doctor",password:"doctor",role:"doctor"})
 db.users.insert({first_name:"secretary",last_name:"secretary",password:"secretary",role:"secretary"})
 
+To run application navigate to project in terminal and type "npm i" to install packages.
+Then type "node server" and app will be started on localhost:3000.
 
 Userpass for all users:
 
